@@ -107,7 +107,7 @@ while True:
 
         motion = np.linalg.norm(new_pt - old_pt)
 
-        # LOWER threshold so points don't disappear
+        # motion threshold (eliminates noise)
         if motion > 0.02:
             filtered_points.append(new_pt)
 
