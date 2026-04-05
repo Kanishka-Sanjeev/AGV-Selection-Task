@@ -107,7 +107,7 @@ def epipolar_correspondences(im1, im2, F, pts1):
             pts2.append(best_match)
             continue
 
-        # Search along epipolar line (restricted)
+        # Search along epipolar line
         for y2 in range(max(y1 - search_range, window),
                         min(y1 + search_range, H - window)):
 
@@ -127,7 +127,7 @@ def epipolar_correspondences(im1, im2, F, pts1):
             if np.std(patch2) < 0.01:
                 continue
 
-            # Normalize patches SAFELY
+            # Normalize patches
             patch1_n = (patch1 - np.mean(patch1)) / np.std(patch1)
             patch2_n = (patch2 - np.mean(patch2)) / np.std(patch2)
 
