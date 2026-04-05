@@ -73,7 +73,7 @@ def epipolar_correspondences(im1, im2, F, pts1):
     if im2.ndim == 3:
         im2 = np.mean(im2, axis=2)
 
-    # Normalize images (VERY important)
+    # Normalize images
     im1 = im1 / 255.0
     im2 = im2 / 255.0
 
